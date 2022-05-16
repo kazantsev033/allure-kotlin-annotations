@@ -10,10 +10,12 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    implementation("io.qameta.allure:allure-junit-platform:2.17.3")
 }
 
 tasks.test {
     useJUnitPlatform()
+    systemProperty("allure.results.directory","build/allure-results")
 }
 
 tasks.withType<KotlinCompile> {
